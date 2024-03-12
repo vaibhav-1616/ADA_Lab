@@ -62,32 +62,31 @@ using namespace std::chrono;
 //     return 0;
 // }
 
-int count_stages(vector<vector<int>> &graph){
-    int n = graph.size();
 
-    vector<int> stage(n, 0);
+int count_stages(vector<vector<int>> & graph){
 
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            if(graph[i][j]!=0 && graph[i][j]!=INF){
+    int size = graph.size();
+    vector<int> stage(size, 0);
+
+    for(int i=0; i<size; i++){
+        for(int j=0; j<size; j++){
+            if(graph[i][j]!=INF && graph[i][j]!=0){
                 stage[j] = stage[i] + 1;
             }
         }
     }
 
-    for(int i=0; i<n; i++){
-        cout<<"Stage of vertex "<<i<<" : "<<stage[i]<<endl;
-    }
+    int max_no_of_stages = 0;
 
-    int max_stages = 0;
-
-    for(int i=0; i<n; i++){
-        if(stage[i]>max_stages){
-            max_stages = stage[i];
+    for(int i=0; i<size; i++){
+        if(stage[i]>max_no_of_stages){
+            max_no_of_stages = stage[i];
         }
     }
 
-    return max_stages + 1;
+
+    return max_no_of_stages + 1;
+
 }
 
 int main(){
@@ -97,14 +96,14 @@ int main(){
           { 0, 7, 5, 1, INF, INF, INF, INF }, // 0
           { INF, 0, INF, INF, 2, 3, INF, INF }, // 1
           { INF, INF, 0, INF, 6, 7, INF, INF }, // 2
-          { INF, INF, INF, 0, 6, 8, 9, INF }, // 3
+          { INF, INF, INF, 0, 4, 8, 9, INF }, // 3
           { INF, INF, INF, INF, 0, INF, INF, 6 }, // 4
           { INF, INF, INF, INF, INF, 0, INF, 4 }, // 5
           { INF, INF, INF, INF, INF, INF, 0, 2 }, // 6
           { INF, INF, INF, INF, INF, INF, INF, 0 } // 7
       };
 
-      cout<<"Total stages = "<<count_stages(graph)<<endl;
+    cout<<"Stages in this graph: "<<count_stages(graph)<<endl;
 
     return 0;
 }
