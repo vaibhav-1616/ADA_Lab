@@ -6,7 +6,7 @@ using namespace std;
 
 void mm(vector<vector<int>> &A, vector<vector<int>> &B, vector<vector<int>> &C){
     int rows_ofA = A.size();
-    int cols_ofB = B[0].size();
+    int cols_ofB = B[0].size();             // first row mein kitne elements -> columns :D
     int cols_ofA = A[0].size();
 
     for(int i=0; i<rows_ofA; i++){
