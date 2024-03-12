@@ -139,7 +139,7 @@ int main() {
 
     vector<vector<int>> matrix3(4, vector<int>(4, 0)); // Result matrix initialized with zeros
 
-    strassen(matrix1, matrix2, matrix3, 4); // Using matrix3 to store the result
+    strassen(matrix1, matrix2, matrix3, 4);
 
     cout << "Result of Matrix Multiplication:" << endl;
     for (int i = 0; i < 4; i++) {
