@@ -86,6 +86,7 @@
                   Still, using recursion we get Time complexity of O(n<sup>3</sup>).</li>
                   <li>Strassen: <br> Now, we modify our DnC code to replace 8 matrix multiplications to 7 while increasing the number of matrix additions and sutractions... This gives us Time complexity = O(n<sup>2.81</sup>).
                   </li>
+                  <img src="./Graphs/Strassen.png" width="700px"/> <br>
           </ul>
       </li><br> 
         <li>
@@ -115,6 +116,7 @@
               <li>First of all, we select a minimum weight edge to start building the MST. Then, we select the vertices (i,j)<br> such that i is in MST and j is not in MST.</li>
               <li>Then; we also initialize a near variable that keeps track of the vertices(in MST) nearest to current vertex. <br>We continue adding the edges using this near variable.</li>
               <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+              <img src="./Graphs/Prim.png" width="700px"/> <br>
           </ul>
       </li><br> 
         <li>
@@ -134,6 +136,7 @@
               <li>Stages -> S1, S2 ... Sk such that a stage S<sub>i</sub> exists where 1<= i <= k and <br>number of vertices in S1(source) = number of vertices in Sk(sink)</li>
               <li>In this problem; we aim to find the shortest path a source to a sink using the above stated property of MSGs...</li>
                 <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+                <img src="./Graphs/MultiStage_graph.png" width="700px"/> <br>
           </ul>
       </li><br> 
           <li>
@@ -168,6 +171,7 @@
               Union(x,y) that makes one vertex the parent of the other.</li>
               <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their<br> inclusion does not result in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v).<br> Then, we perform their union and include them in the MST...</li>
               <li>The Time complexity is O(E x log V) as selecting edges from the heap takes O(E x log E) time whereas, total time for Union-Find operation takes O(E x log V) time.</li>
+              <img src="./Graphs/Kruskal.png" width="700px"/> <br>
           </ul>
       </li><br> 
       <li>
