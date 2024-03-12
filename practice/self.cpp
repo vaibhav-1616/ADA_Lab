@@ -1,10 +1,11 @@
-// #include <iostream>
-// #include <vector>
-// #include <chrono>
-// #include <cstdlib>
+#include <iostream>
+#include <vector>
+#include<algorithm>
+#include <chrono>
+#include <cstdlib>
 
-// using namespace std;
-// using namespace std::chrono;
+using namespace std;
+using namespace std::chrono;
 
 // int partition(vector<int>& arr, int l, int h){
 //     int pivot = arr[l];
@@ -75,71 +76,72 @@
 // }
 
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
-struct Item {
+struct item{
     int weight;
-    int value;
-    double ratio; // value/weight ratio
+    int profit;
 };
 
-// Comparator function to sort items based on value/weight ratio
-bool compare(Item a, Item b) {
-    return a.ratio > b.ratio; // Sort in descending order
+bool sort_by_pw(const item&a, const item&b){
+    return (double)a.profit/a.weight > (double)b.profit/b.weight;
 }
 
-void fractionalKnapsack(vector<Item> &items, int capacity) {
-    // Sort items by value/weight ratio
-    sort(items.begin(), items.end(), compare);
+void knapsack(vector<item> &items, int capacity){
 
-    vector<double> inclusion(items.size(), 0.0); // To store 1 (full), 0 (not), or fraction
+    sort(items.begin(), items.end(), sort_by_pw);       // descending order by p/w ratio
 
-    double totalValue = 0.0;
-    int currentWeight = 0;
+    vector<double>flag(items.size(), 0.0);
 
-    for (int i = 0; i < items.size(); i++) {
-        if (currentWeight + items[i].weight <= capacity) {
-            // Include the whole item
-            totalValue += items[i].value;
-            currentWeight += items[i].weight;
-            inclusion[i] = 1.0;
-        } else {
-            // Include fraction of the item
-            double fraction = (double)(capacity - currentWeight) / items[i].weight;
-            totalValue += items[i].value * fraction;
-            inclusion[i] = fraction;
-            break; // Knapsack is full
+    float tp = 0.0;     // profit
+    int cw = 0;         // weight filled until now
+
+    for(int i=0; i<items.size(); i++){
+        if(cw + items[i].weight <= capacity){
+            tp += items[i].profit;
+            cw += items[i].weight;
+            flag[i] = 1.0;
+        }
+
+        else{           // this comes when we are at the last item that cannot be fully included
+            double fraction = (double)(capacity - cw) / items[i].weight;
+            // cw is not equal to the capacity
+            tp += items[i].profit * fraction;
+            flag[i] = fraction;
+            break;      // coz know the knapsack is full
         }
     }
 
-    // Output results
-    cout << "Items included in the knapsack:\n";
-    for (int i = 0; i < items.size(); i++) {
-        cout << "Item " << i + 1 << ": " << inclusion[i] << endl;
+    cout<<"Items: ";
+    for(int i=0; i<items.size(); i++){
+        cout<<"("<<items[i].profit<<", "<<items[i].weight<<")"<<"\t";
     }
-    cout << "Total value in knapsack = " << totalValue << endl;
+
+    cout<<endl;
+    
+    cout<<"Flag: ";
+    for(int i=0; i<items.size(); i++){
+        cout<<flag[i]<<" \t \t";
+    }
+    cout<<endl;
+
+    cout<<"Total profit = "<<tp<<endl;
+
 }
 
-int main() {
-    vector<Item> items = {
-        {10, 60}, {20, 100}, {30, 120}
+int main(){
+
+    vector<item> items = {
+        {10, 100},
+        {20, 120},
+        {30, 140},
+        {40, 150},
+        {50, 200}
     };
+    
+    int capacity = 100;
 
-    int capacity = 50;
-
-    // Calculate value/weight ratio for sorting
-    for (auto &item : items) {
-        item.ratio = (double)item.value / item.weight;
-    }
-
-    fractionalKnapsack(items, capacity);
+    knapsack(items, capacity);
 
     return 0;
 }
-
 
 

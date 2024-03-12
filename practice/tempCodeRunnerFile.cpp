@@ -63,47 +63,29 @@ using namespace std::chrono;
 // }
 
 
-int count_stages(vector<vector<int>> & graph){
 
-    int size = graph.size();
-    vector<int> stage(size, 0);
-
-    for(int i=0; i<size; i++){
-        for(int j=0; j<size; j++){
-            if(graph[i][j]!=INF && graph[i][j]!=0){
-                stage[j] = stage[i] + 1;
-            }
-        }
-    }
-
-    int max_no_of_stages = 0;
-
-    for(int i=0; i<size; i++){
-        if(stage[i]>max_no_of_stages){
-            max_no_of_stages = stage[i];
-        }
-    }
-
-
-    return max_no_of_stages + 1;
-
-}
 
 int main(){
 
-    vector<vector<int>> graph = {
-        //  0  1  2  3  4  5  6  7  
-          { 0, 7, 5, 1, INF, INF, INF, INF }, // 0
-          { INF, 0, INF, INF, 2, 3, INF, INF }, // 1
-          { INF, INF, 0, INF, 6, 7, INF, INF }, // 2
-          { INF, INF, INF, 0, 4, 8, 9, INF }, // 3
-          { INF, INF, INF, INF, 0, INF, INF, 6 }, // 4
-          { INF, INF, INF, INF, INF, 0, INF, 4 }, // 5
-          { INF, INF, INF, INF, INF, INF, 0, 2 }, // 6
-          { INF, INF, INF, INF, INF, INF, INF, 0 } // 7
-      };
+    vector<vector<int>> A = {{1,2,3}, {4,5,6}};
 
-    cout<<"Stages in this graph: "<<count_stages(graph)<<endl;
+    vector<vector<int>> B = {{1,2}, {3,4}, {5,6}};
+
+    int rows_of_A = A.size();
+    int rows_of_B = B.size();
+
+    int cols_of_A = A[0].size();
+    int cols_of_B = B[0].size();
+
+    cout<<"Order of matrix (rows x columns): "<<endl;
+
+    cout<<"A -> "<<rows_of_A<<" x "<<cols_of_A<<endl;
+    cout<<"B -> "<<rows_of_B<<" x "<<cols_of_B<<endl;
+
+    vector<vector<int>> C(rows_of_A, vector<int>(cols_of_A, 0));
+
+    cout<<"C -> "<<rows_of_A<<" x "<<cols_of_B<<endl;
+
 
     return 0;
 }
