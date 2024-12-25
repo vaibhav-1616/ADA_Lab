@@ -193,4 +193,12 @@
               <li>We use the Merge-Purge method here to devise a solution to this problem. Merge function adds new state i.e. a new {weight, value} pair to the existing set whenever a new item {wi, vi} is considered. After merging new weight-value pairs, some states might be dominated by others. The Purge function removes these dominated states to keep only the most optimal ones.</li>
           </ul>
       </li><br>
+      <li>
+          <b>Longest Common Subsequence:</b> <br>
+          <ul>
+              <li>A classic computer science problem that focuses on finding the longest sequence of elements that appear in the same order (but not necessarily contiguously) in two given sequences.</li>
+              <li>A subsequence is a sequence derived by deleting zero or more elements without changing the order of the remaining elements.</li>
+              <li>It is solved using Dynamic Programming in O(m × n) time, where m and n are the lengths of the two input sequences.</li>
+          </ul>
+      </li><br>
     </ol>
