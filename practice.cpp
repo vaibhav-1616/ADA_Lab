@@ -28,6 +28,7 @@ bool isPrime(int n){
     return true;
 }
 
+
 int main() {
     
     int n = 10;
@@ -45,6 +46,8 @@ int main() {
     else{
         cout<<"Non prime"<<endl;
     }
+
+    
 
     return 0;
 }

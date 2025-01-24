@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 // Naive approach: TC = O(n)
@@ -63,8 +62,8 @@ int op_peak(int arr[], int low, int high){
     
 }
 
-
 int main(){
+
     // Peak Finding...
     // An element is the peak if it is >= its immediate left and right elements.
 
@@ -78,7 +77,6 @@ int main(){
     // peak(arr, n);
 
     op_peak(arr, low, high);
-
 
     return 0;
 }
