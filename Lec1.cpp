@@ -64,8 +64,6 @@ int op_peak(int arr[], int low, int high){
 }
 
 
-// int fibbo(int )
-
 int main(){
     // Peak Finding...
     // An element is the peak if it is >= its immediate left and right elements.
