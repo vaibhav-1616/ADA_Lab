@@ -1,4 +1,5 @@
 #include <iostream>
+#include<vector>
 using namespace std;
 
 // Naive approach: TC = O(n)
@@ -62,21 +63,71 @@ int op_peak(int arr[], int low, int high){
     
 }
 
+// 2D array peak finding
+
+int find_peak_in_2D_array(int arr[][4], int rows, int cols, int low, int high){
+
+    // middle column
+
+    int mid = low + (high - low) / 2;
+
+    int max_row_ind = 0;
+    for(int i=1; i<rows; i++){
+        if  (arr[max_row_ind][mid] < arr[i][mid]){
+            max_row_ind = i;
+        }
+    }
+
+    bool is_left_peak = (mid == 0 || arr[max_row_ind][mid] >= arr[max_row_ind][mid - 1]);
+    
+    bool is_right_peak = (mid == cols - 1 || arr[max_row_ind][mid] >= arr[max_row_ind][mid + 1]);
+
+    if (is_left_peak && is_right_peak) {
+        return arr[max_row_ind][mid];
+    }
+
+    // recursively move to right
+    if((mid < cols - 1) && arr[max_row_ind][mid] < arr[max_row_ind][mid+1]){
+        return find_peak_in_2D_array(arr, rows, cols, mid+1, high);
+    }
+
+    // recursively move to left
+    else{
+        return find_peak_in_2D_array(arr, rows, cols, low, mid-1);
+    }
+
+}
+
+
+
 int main(){
 
     // Peak Finding...
     // An element is the peak if it is >= its immediate left and right elements.
 
-    int arr[] = {2,8,1,9,4,6,10,12,2,7};
+    // int arr[] = {2,8,1,9,4,6,10,12,2,7};
 
-    int n = sizeof(arr)/sizeof(arr[0]);
+    // int n = sizeof(arr)/sizeof(arr[0]);
 
-    int low = 0;
-    int high = n-1;
+    // int low = 0;
+    // int high = n-1;
 
     // peak(arr, n);
 
-    op_peak(arr, low, high);
+    // op_peak(arr, low, high);
+
+    int arr[4][4] = {
+        {10, 8, 10, 10},
+        {14, 13, 12, 11},
+        {15, 9, 11, 7},
+        {16, 17, 19, 20}
+    };
+
+    int rows = 4;
+    int cols = 4;
+    int peak = find_peak_in_2D_array(arr, rows, cols, 0, cols - 1);
+    cout << "Peak element in the 2D array is: " << peak << endl;
+
 
     return 0;
 }
