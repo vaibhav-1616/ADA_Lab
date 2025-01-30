@@ -79,7 +79,7 @@ int find_peak_in_2D_array(int arr[][4], int rows, int cols, int low, int high){
     }
 
     bool is_left_peak = (mid == 0 || arr[max_row_ind][mid] >= arr[max_row_ind][mid - 1]);
-    
+
     bool is_right_peak = (mid == cols - 1 || arr[max_row_ind][mid] >= arr[max_row_ind][mid + 1]);
 
     if (is_left_peak && is_right_peak) {
@@ -98,6 +98,10 @@ int find_peak_in_2D_array(int arr[][4], int rows, int cols, int low, int high){
 
 }
 
+
+// MAGIC SQUARE PROBLEM
+
+// GRAPHS IN PYTHON FOR SELECTION SORT AND QUICK SORT
 
 
 int main(){
