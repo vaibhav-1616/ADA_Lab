@@ -4,6 +4,6 @@
 <!-- <hr> -->
     <ol>
       <li>QuickSort Algorithm: <br>
-      <img href="quicksort.png"> 
+      <img src="quicksort.png"> 
       </li>
     </ol>
