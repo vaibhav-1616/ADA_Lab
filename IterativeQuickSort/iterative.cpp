@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <vector>
-#include<algorithm>
+// #include<algorithm>
 #include <chrono>  // For timing
 #include<fstream>
 
@@ -87,7 +87,7 @@ int main() {
         Iterativequicksort(arr, 0, n - 1);
         auto end = high_resolution_clock::now();   // End time
 
-        long long duration = duration_cast<microseconds>(end - start).count();
+        long long duration = duration_cast<nanoseconds>(end - start).count();
 
         // cout << "Time taken by QuickSort for " << n << " elements: " << duration << " microseconds" << endl;
         file << n << "," << duration << "\n";

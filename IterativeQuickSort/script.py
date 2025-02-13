@@ -30,11 +30,15 @@ plt.plot(input_sizes, n_log_n_times, label="O(n log n) Time Complexity", color="
 # Labels and Title
 plt.xlabel("Input Size (n)", fontsize=12)
 plt.ylabel("Time (nanoseconds)", fontsize=12)
-plt.title("QuickSort Runtime vs O(n^2) and O(n log n) Time Complexities", fontsize=14)
+plt.title("QuickSort Runtime ", fontsize=14)
 plt.yscale("log")  # Use log scale for better visualization of large differences
+# plt.xscale("log")
+
+plt.xticks(np.arange(min(input_sizes), max(input_sizes) + 1, step=100000), rotation=45)
+
 
 # Add a grid and legend
-plt.grid(True, which='both', linestyle="--", linewidth=0.5)
+plt.grid(True, which='both', linestyle="", linewidth=0.5)
 plt.legend()
 
 # Show the plot

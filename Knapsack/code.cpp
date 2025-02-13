@@ -86,7 +86,7 @@ int main() {
     outputFile << "size,time\n";
 
     // Loop over input sizes from 1000 to 100000 with increments of 1000
-    for (int n = 1000; n <= 100000; n += 1000) {
+    for (int n = 10000; n <= 100000; n += 10000) {
         double res = 0;
 
         // Repeat the process 10 times to get an average

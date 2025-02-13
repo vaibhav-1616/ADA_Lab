@@ -35,7 +35,7 @@ plt.yscale("log")  # Use log scale for better visualization of large differences
 # plt.xscale("log")  # Log scale for x-axis to compare performance across large input sizes
 
 # Add a grid and legend
-plt.grid(True, which='both', linestyle="--", linewidth=0.5)
+plt.grid(True, which='both', linestyle="none", linewidth=0.5)
 plt.legend()
 
 # Show the plot
