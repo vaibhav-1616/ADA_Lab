@@ -4,4 +4,5 @@
 <!-- <hr> -->
     <ol>
       <li>QuickSort Algorithm:</li>
+        <img href="D:\ADA lab\Graphs\iterative_quicksort.png"> 
     </ol>
