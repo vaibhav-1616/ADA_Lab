@@ -1,8 +1,8 @@
 <h1> Analysis and Design of Algorithms </h1>
 <!-- <hr> -->
-    <h2>Below is the list of all my ADA programs:</h2>
+    <h3>List of all my ADA programs:</h3>
 <!-- <hr> -->
     <ol>
       <li>QuickSort Algorithm:</li>
-        <img href="D:\ADA lab\Graphs\iterative_quicksort.png"> 
+        <img href=""> 
     </ol>
