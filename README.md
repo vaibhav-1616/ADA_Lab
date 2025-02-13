@@ -18,4 +18,14 @@
               </li>
           </ul>
       </li>
+      <li>
+          <b>Peak finding:</b> <br>
+          <ul>
+              <li>
+                  In 1D array, it is simple to find the peak element by just following the approach <br>
+                  of comparing each element with its immediate left and right elements and if it is greater than both of them, <br>
+                  that is the Peak :D
+              </li>
+          </ul>
+      </li>
     </ol>
