@@ -3,6 +3,7 @@
     <h3>List of all my ADA programs:</h3>
 <!-- <hr> -->
     <ol>
-      <li>QuickSort Algorithm:</li>
-        <img href=""> 
+      <li>QuickSort Algorithm: <br>
+      <img href="quicksort.png"> 
+      </li>
     </ol>
