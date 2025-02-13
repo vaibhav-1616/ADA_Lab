@@ -1,7 +1,7 @@
 <h1> Analysis and Design of Algorithms </h1>
-<hr>
+<!-- <hr> -->
 <h2>Below is the list of all my ADA programs:</h2>
-<hr>
+<!-- <hr> -->
 <ol>
   <li></li>
 </ol>
