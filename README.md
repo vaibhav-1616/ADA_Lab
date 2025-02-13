@@ -17,7 +17,7 @@
                   decreases the time complexity (near O(n log n)... 
               </li>
           </ul>
-      </li>
+      </li> <br>
       <li>
           <b>Peak finding:</b> <br>
           <ul>
@@ -26,6 +26,12 @@
                   of comparing each element with its immediate left and right elements and if it is greater than both of them, <br>
                   that is the Peak :D
               </li>
+              <li>
+                  In a 2D array, we implement the same approach but with a binary search twist.
+              </li>
           </ul>
-      </li>
+      </li> <br>
+      <li>
+          
+      </li>  
     </ol>
