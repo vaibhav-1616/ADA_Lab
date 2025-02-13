@@ -11,6 +11,6 @@
                   to ensure that elements greater than the pivot are to the right of it and smaller elements are to the left of it.
               </li>
           </ul>
-      <img src="D:\ADA lab\Graphs\quicksort.png"> 
+      <img src="D:\ADA lab\Graphs\quicksort.png"/> 
       </li>
     </ol>
