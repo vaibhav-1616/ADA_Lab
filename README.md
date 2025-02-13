@@ -3,7 +3,7 @@
     <h3>List of all my ADA programs:</h3>
 <!-- <hr> -->
     <ol>
-      <li>QuickSort Algorithm: <br>
+      <li><b>QuickSort Algorithm:</b> <br>
           <ul>
               <li>This is an efficient sorting algorithm that wroks well for larger input values.
               </li>
