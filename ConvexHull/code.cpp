@@ -1,146 +1,174 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <cmath>
+#include <random>
+#include <ctime>
+#include <fstream>
+#include <string>
+
 using namespace std;
 
-struct co_ordinate{
+// Structure to represent a point
+struct Point {
     int x, y;
 };
 
-void print(co_ordinate& p1, co_ordinate p2, co_ordinate& p3) {
-    cout << "Triangle: (" << p1.x << ", " << p1.y << "), ("
-         << p2.x << ", " << p2.y << "), ("
-         << p3.x << ", " << p3.y << ")\n";
+// Function to calculate the cross product of three points
+int cross_product(Point a, Point b, Point c) {
+    return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 }
 
-// naive approach O(n^3)
-void form_all_possible_triangles(vector<co_ordinate> &points){
-    int size = points.size();
+// Function to find the distance between two points
+double distance(Point a, Point b) {
+    return sqrt(pow(b.x - a.x, 2) + pow(b.y - a.y, 2));
+}
 
-    for(int i=0; i<size; i++){
-        for(int j = i+1; j<size; j++){
-            for(int k=j+1; k<size; k++){
-                print(points[i], points[j], points[k]);
-            }
+// Function to find the point with the minimum x-coordinate
+Point find_min_x(vector<Point>& points) {
+    Point min_point = points[0];
+    for (int i = 1; i < points.size(); i++) {
+        if (points[i].x < min_point.x) {
+            min_point = points[i];
         }
     }
+    return min_point;
 }
 
-struct min_max{
-    int max, min;
-};
-
-min_max calc_minAndMax(vector<int>& arr, int low, int high){
-    min_max result, left, right;            // result for (min, max) overall ; left and right as recursive containers for recursive calls to left and right halves for min and max calculation
-
-    if(low==high){          // 1 element
-        result.max = arr[low];
-        result.min = arr[low];
-        return result;
-    }
-
-    if(high==low+1){
-        if(arr[low]>arr[high]){
-            result.max = arr[low];
-            result.min = arr[high];
+// Function to find the point with the maximum x-coordinate
+Point find_max_x(vector<Point>& points) {
+    Point max_point = points[0];
+    for (int i = 1; i < points.size(); i++) {
+        if (points[i].x > max_point.x) {
+            max_point = points[i];
         }
-        else{
-            result.max = arr[high];
-            result.min = arr[low];
-        }
-
-        return result;
     }
-
-    int mid = (low+high) / 2;
-
-    left = calc_minAndMax(arr, low, mid);
-    right = calc_minAndMax(arr, mid+1, high);
-
-    result.min = min(left.min, right.min);
-    result.max = max(left.max, right.max);
-
-    return result;
-} 
-
-// function to calculate determinant of a matrix 
-int determinantFor2X2(vector<vector<int>> &matrix){
-    return matrix[0][0] * matrix[1][1] -  matrix[0][1] * matrix[1][0];
+    return max_point;
 }
 
-float areaOfTriangle(co_ordinate p1, co_ordinate p2, co_ordinate p3) {
-    return abs(p1.x * (p2.y - p3.y) + p2.x * (p3.y - p1.y) + p3.x * (p1.y - p2.y)) / 2.0;
-}
+// Recursive function to find the convex hull
+void quick_hull_recursive(vector<Point>& points, Point p1, Point p2, vector<Point>& hull) {
+    if (points.empty()) return;
 
-void findMaxAreaTriangle(vector<co_ordinate> points, co_ordinate&p1, co_ordinate&p2, co_ordinate&p3, vector<co_ordinate> &result){
-    float maxarea = 0.0;
-    int n = points.size();
+    int max_dist_index = -1;
+    double max_dist = 0;
 
-    for(int i=0; i<n; i++){
-        for(int j=i+1; j<n; j++){
-            for(int k=j+1; k<n; k++){
-                float area = areaOfTriangle(points[i], points[j], points[k]);
-                if(area>maxarea){
-                    maxarea = area;
-                    p1 = points[i];
-                    p2 = points[j];
-                    p3 = points[k];
-
-                }
-            }
+    for (int i = 0; i < points.size(); i++) {
+        double dist = abs(cross_product(p1, p2, points[i]));
+        if (dist > max_dist) {
+            max_dist = dist;
+            max_dist_index = i;
         }
     }
 
+    if (max_dist_index == -1) return; // No points on this side
 
-    result.push_back(p1);
-    result.push_back(p2);
-    result.push_back(p3);
+    Point p_max = points[max_dist_index];
 
+    vector<Point> left_points;
+    vector<Point> right_points;
+
+    for (int i = 0; i < points.size(); i++) {
+        if (cross_product(p1, p_max, points[i]) > 0) {
+            left_points.push_back(points[i]);
+        }
+        if (cross_product(p_max, p2, points[i]) > 0) {
+            right_points.push_back(points[i]);
+        }
+    }
+
+    quick_hull_recursive(left_points, p1, p_max, hull);
+    hull.push_back(p_max); // Add p_max to the hull
+    quick_hull_recursive(right_points, p_max, p2, hull);
 }
 
-bool checkPointInside(co_ordinate p, co_ordinate p1, co_ordinate p2, co_ordinate p3){
-    float areaABC = areaOfTriangle(p1, p2, p3);
-    float areaAPB = areaOfTriangle(p1, p, p3);
-    float areaAPC = areaOfTriangle(p1, p, p3);
-    float areaBPC = areaOfTriangle(p2, p, p3);
+// Function to find the convex hull of a set of points
+vector<Point> quick_hull(vector<Point>& points) {
+    if (points.size() < 3) return points; // Handle cases with less than 3 points
 
-    float res = areaABC - (areaAPB + areaAPC + areaBPC);
+    Point p_min = find_min_x(points);
+    Point p_max = find_max_x(points);
 
-    if(res==0){
-        return true;            // point inside
+    vector<Point> hull;
+    hull.push_back(p_min);
+    hull.push_back(p_max);
+
+    vector<Point> left_points;
+    vector<Point> right_points;
+
+    for (int i = 0; i < points.size(); i++) {
+        if (cross_product(p_min, p_max, points[i]) > 0) {
+            left_points.push_back(points[i]);
+        } else if (cross_product(p_min, p_max, points[i]) < 0) {
+            right_points.push_back(points[i]);
+        }
     }
 
-    else{
-        return false;
-    }
+    quick_hull_recursive(left_points, p_min, p_max, hull);
+    quick_hull_recursive(right_points, p_max, p_min, hull);
 
+    return hull;
 }
 
 int main() {
+    srand(time(0));
 
-    // vector<co_ordinate> points = {{0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}};
+    vector<Point> points;
+    int num_points = 100;
 
-    // cout << "All possible triangles from the given set of points:\n";
-    // form_all_possible_triangles(points);
+    for (int i = 0; i < num_points; ++i) {
+        Point p;
+        p.x = rand() % 101;
+        p.y = rand() % 101;
+        points.push_back(p);
+    }
 
-    // vector<int> arr = {11,2,14,15,7,8,10,3};
-    // int n = arr.size();
+    vector<Point> hull = quick_hull(points);
 
-    // min_max answer = calc_minAndMax(arr, 0, n-1);
+    // --- CSV Output for all points ---
+    string all_points_filename = "all_points_data.csv";
+    ofstream all_points_outfile(all_points_filename);
 
-    // cout<<"(Maximum, Minimum) = "<<answer.max<<", "<<answer.min<<endl;
+    if (all_points_outfile.is_open()) {
+        all_points_outfile << "x,y" << endl; // Header
+        for (const auto& p : points) {
+            all_points_outfile << p.x << "," << p.y << endl;
+        }
+        all_points_outfile.close();
+        cout << "All points data written to " << all_points_filename << endl;
+    } else {
+        cerr << "Unable to open file for writing (all points)." << endl;
+        return 1;
+    }
 
-    vector<co_ordinate> points = {{0, 0}, {1, 1}, {2, 2}, {3, 3}, {4, 4}, {0, 4}, {4, 0}};
 
-    co_ordinate p1, p2, p3;
-    vector<co_ordinate> result;
+    // --- CSV Output for convex hull points ---
+    string convex_hull_filename = "convex_hull_data.csv";
+    ofstream convex_hull_outfile(convex_hull_filename);
 
-    findMaxAreaTriangle(points, p1, p2, p3, result);
+    if (convex_hull_outfile.is_open()) {
+        convex_hull_outfile << "x,y,hull" << endl;
+        for (const auto& p : points) {
+            bool is_hull_point = false;
+            for (const auto& h : hull) {
+                if (p.x == h.x && p.y == h.y) {
+                    is_hull_point = true;
+                    break;
+                }
+            }
+            convex_hull_outfile << p.x << "," << p.y << "," << is_hull_point << endl;
+        }
+        convex_hull_outfile.close();
+        cout << "Convex hull data written to " << convex_hull_filename << endl;
+    } else {
+        cerr << "Unable to open file for writing (convex hull)." << endl;
+        return 1;
+    }
 
-    cout << "Points forming the maximum area triangle:\n";
-    print(p1, p2, p3);
 
-    for(auto& point: result){
-        cout<<point.x<<", "<< point.y<<endl;
+    cout << "Convex Hull Points:" << endl;
+    for (const auto& p : hull) {
+        cout << "(" << p.x << ", " << p.y << ")" << endl;
     }
 
     return 0;
