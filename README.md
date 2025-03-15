@@ -86,7 +86,19 @@ Follows a set pattern in where the numbers increase in a diagonal upwards to the
                   <li>We calculate the perpendicular distance of a point from a line which will help us in finding the max area triangle.</li>  
                   <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>                  
               </ol>
-              <img src="./Graphs/convex_hull.png" width="700px"/> <br>
+              <img src="./Graphs/hull.png" width="700px"/> <br>
+          </ul>
+      </li><br> 
+         <li>
+          <b>Prim's Algorithm</b> <br>
+          <ul>
+              <li>A greedy algorithm that is used to calculate the minimum cost spanning tree for a given graph.</li>
+              <li>A spanning tree is a subgraph of a connected, undirected graph that: <br>
+                  <ol>
+                      <li>Includes all the vertices (nodes) of the original graph.</li>
+                      <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
+                      <li>Has exactly n-1 edges, where n is the number of vertices.</li>
+                  </ol>
           </ul>
       </li><br> 
     </ol>
