@@ -30,7 +30,7 @@ plt.plot(input_sizes, n_log_n_times, label="O(n log n) Time Complexity", color="
 # Labels and Title
 plt.xlabel("Input Size (n)", fontsize=12)
 plt.ylabel("Time (nanoseconds)", fontsize=12)
-plt.title("QuickSort Runtime ", fontsize=14)
+plt.title("IterativeQuicksort ", fontsize=14)
 plt.yscale("log")  # Use log scale for better visualization of large differences
 # plt.xscale("log")
 
