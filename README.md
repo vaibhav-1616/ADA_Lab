@@ -14,7 +14,9 @@
                   Inherently, a recursion stack is used to perform sorting of the elements according to the pivot element. <br>
                   But, that results in a larger time complexity of the O(n^2) which is highly undesirable... <br>
                   Instead, we prefer to the use the iterative quicksort using a user-defined stack that significantly <br>
-                  decreases the time complexity (near O(n log n)... 
+                  decreases the time complexity (near O(n log n))... 
+                  <br>
+                  <img src="./Graphs/quicksort.png"/> <br>
               </li>
           </ul>
       </li> <br>
