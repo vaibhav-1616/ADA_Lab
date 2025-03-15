@@ -86,6 +86,7 @@ Follows a set pattern in where the numbers increase in a diagonal upwards to the
                   <li>We calculate the perpendicular distance of a point from a line which will help us in finding the max area triangle.</li>  
                   <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>                  
               </ol>
+              <img src="./Graphs/convex_hull.png" width="700px"/> <br>
           </ul>
       </li><br> 
     </ol>
