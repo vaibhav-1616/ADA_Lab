@@ -9,7 +9,7 @@
               </li>
               <li>In this algorithm, we select a pivot element and then partition the entire array 
                   around that pivot <br> to ensure that elements greater than the pivot are to the right of it and smaller elements are to the left of it. </li><br>
-                  <img src="./Graphs/quicksort.png"/> <br>
+                  <img src="./Graphs/quicksort.png" width="700px"/> <br>
               <li>
                   Inherently, a recursion stack is used to perform sorting of the elements according to the pivot element. <br>
                   But, that results in a larger time complexity of the O(n^2) which is highly undesirable... <br>
@@ -39,5 +39,16 @@
               <li>(Odd Size)Sum of all rows, columns and diagonals is equal... Creates a square matrix where the sum of all colums,<br> rows and diagonals is equal
 Follows a set pattern in where the numbers increase in a diagonal upwards to the left<br> and goes down one when number is a multiple of the size...</li>
           </ul>
-      </li>  
+      </li><br>  
+        <li>
+          <b>Fractional Knapsack</b> <br>
+          <ul>
+              <li>Problem involving the calculation of maximum profit that can be derived from a given set of values</li>
+              <li>We sort the array according to the criterion we need(here we sort 3 time, according to profit, weight and <br>ratio of profit/weight) and then pick the items in non-increasing manner</li>
+              <li>In this problem, we can include fractional parts of an item as well incase an item cannot be included<br> completely in the knapsack...
+              <br>
+                  <img src="./Graphs/knapsack.png" width="700px"/> <br>
+              </li>
+          </ul>
+      </li><br> 
     </ol>
