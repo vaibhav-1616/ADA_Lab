@@ -76,4 +76,16 @@ Follows a set pattern in where the numbers increase in a diagonal upwards to the
               </ol>
           </ul>
       </li><br> 
+        <li>
+          <b>Convex Hull of a Polygon</b> <br>
+          <ul>
+              <li>Quick Hull: <br>
+              We use an algorithm similar to quicksort in the sense that, we divide the given set of points into set of triangles and<br> we try to find that triangles which have maximum possible area coz they will be the ones forming the convex hull...</li>
+              <ol type="A">
+                  <li>We find the leftmost and rightmost points (points with max and min x-coordinate) so as to divide the set of points<br> into 2 portions.</li>
+                  <li>We calculate the perpendicular distance of a point from a line which will help us in finding the max area triangle.</li>  
+                  <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>                  
+              </ol>
+          </ul>
+      </li><br> 
     </ol>
