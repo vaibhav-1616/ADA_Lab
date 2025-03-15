@@ -51,4 +51,15 @@ Follows a set pattern in where the numbers increase in a diagonal upwards to the
               </li>
           </ul>
       </li><br> 
+        <li>
+          <b>Activity Selection</b> <br>
+          <ul>
+              <li>We want to ensure that maximum number of jobs(or activities) are scheduled/completed within a given period of time...</li>
+              <li>The goal is to maximize the number of jobs(or CPU usage) by ensuring highest amount of jobs that can be completed without<br> any overlap.</li>
+              <li>In this problem, sort the activities by their start time and then by their finish times to calculate which method leads to max<br> number of activities that get completed without any overlap.
+              <br>
+                  <img src="./Graphs/activity_selection.png" width="700px"/> <br>
+              </li>
+          </ul>
+      </li><br> 
     </ol>
