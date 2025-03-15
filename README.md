@@ -16,7 +16,7 @@
                   Instead, we prefer to the use the iterative quicksort using a user-defined stack that significantly <br>
                   decreases the time complexity (near O(n log n))... 
                   <br>
-                  <img src="./Graphs/quicksort.png"/> <br>
+                  <img src="./Graphs/quicksort_iterative.png" width="700px"/> <br>
               </li>
           </ul>
       </li> <br>
