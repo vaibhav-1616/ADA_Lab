@@ -36,8 +36,8 @@
       <li>
           <b>Magic Square</b> <br>
           <ul>
-              <li>(Odd Size)Sum of all rows, columns and diagonals is equal... Creates a square matrix where the sum of all colums, rows and diagonals is equal.</li>
-              <li>Follows a set pattern in where the numbers increase in a diagonal upwards to the left<br> and goes down one when number is a multiple of the size...</li>
+              <li>(Odd Size)Sum of all rows, columns and diagonals is equal... Creates a square matrix where the sum of all <br>columns, rows and diagonals is equal.</li>
+              <li>Follows a set pattern in where the numbers increase in a diagonal upwards to the left and goes down <br>one when number is a multiple of the size...</li>
           </ul>
       </li><br>  
         <li>
