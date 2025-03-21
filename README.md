@@ -10,7 +10,7 @@
               <li>In each iteration of this algorithm, we find the smallest portion in the unsorted portion of array.</li>
               <li>Swap this smallest element with the first element of the unsorted portion.</li>
               <li>Then, we shift the boundary of loop iteration one step forward (2 to n-1)...</li>
-              <li>Time complexity is O(n<sup>2</sup>) for best and worst case scenarios.</li>
+              <li>Time complexity is O(n<sup>2</sup>) for best and worst case scenarios.</li><br>
               <img src="./Graphs/selectionSort.png" width="700px"/> <br>
           </ul>
       </li><br>
@@ -37,11 +37,11 @@
               <li>
                   In 1D array, it is simple to find the peak element by just following the approach <br>
                   of comparing each element with its immediate left and right elements and if it is greater than both of them, <br>
-                  that is the Peak :D
+                  that is the Peak.</li>
+              <li>In a 2D array, we implement the same approach but with a binary search twist.</li>
+              <li>Time complexity of O(n) for finding peak in 1D array but it can be optimized to O(log n) using binary search approach.
               </li>
-              <li>
-                  In a 2D array, we implement the same approach but with a binary search twist.
-              </li>
+              <li>Time complexity of O(nxm) for finding peak in 2D array but it can be optimized to O(nxlog m) using binary search approach.</li>
           </ul>
       </li> <br>
       <li>
@@ -49,6 +49,7 @@
           <ul>
               <li>(Odd Size)Sum of all rows, columns and diagonals is equal... Creates a square matrix where the sum of all <br>columns, rows and diagonals is equal.</li>
               <li>Follows a set pattern in where the numbers increase in a diagonal upwards to the left and goes down <br>one when number is a multiple of the size...</li>
+              <li>Time complexity of O(n<sup>2<sup>) for finding magic square.</li>
           </ul>
       </li><br>  
         <li>
@@ -57,10 +58,8 @@
               <li>Problem involving the calculation of maximum profit that can be derived from a given set of values</li>
               <li>We sort the array according to the criterion we need(here we sort 3 time, according to profit, weight and <br>ratio of profit/weight) and then pick the items in non-increasing manner</li>
               <li>In this problem, we can include fractional parts of an item as well incase an item cannot be included<br> completely in the knapsack...</li>
-<<<<<<< HEAD
-=======
               <li>Suppose, we have the max capacity of knapsack M and profits (P<sub>i</sub>) and weights (W<sub>i</sub>)... Then, we aim to maximize the (P<sub>i</sub>X<sub>i</sub>) subject to the constraint that (W<sub>i</sub>X<sub>i</sub>); where X is a flag array that tells the amount of item included...</li>
->>>>>>> 8930de4 (change)
+              <li>The total Time complexity for this probelm is O(n log n) as the sorting takes (n log n) time whereas selecting the items takes O(n) time. So dominant is O(n log n).</li>
               <br>
                   <img src="./Graphs/knapsack.png" width="700px"/> <br>
           </ul>
@@ -72,6 +71,7 @@
               <li>The goal is to maximize the number of jobs(or CPU usage) by ensuring highest amount of jobs that<br> can be completed without any overlap.</li>
               <li>In this problem, sort the activities by their start time and then by their finish times to calculate which <br>method leads to max number of activities that get completed without any overlap.
               </li>
+              <li>The total Time complexity for this problem is O(n log n) as the sorting by finish times takes O(n log n) time whereas selecting the items takes O(n) time. So dominant is O(n log n).</li>
               <br>
                   <img src="./Graphs/activity_selection.png" width="700px"/> <br>
           </ul>
@@ -96,7 +96,8 @@
               <ol type="A">
                   <li>We find the leftmost and rightmost points (points with max and min x-coordinate) so as to divide the set of points<br> into 2 portions.</li>
                   <li>We calculate the perpendicular distance of a point from a line which will help us in finding the max area triangle.</li>  
-                  <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>                  
+                  <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>
+                  <li>The Worst case Time complexity for this problem is O(n<sup>2<sup>) whereas average case complexity is O(n log n).</li>                  
               </ol>
               <img src="./Graphs/hull.png" width="700px"/> <br>
           </ul>
@@ -166,6 +167,7 @@
               <li>We devise 2 functions: Find(x) that returns the root of the tree to whcih a vertex x belongs to and, <br>
               Union(x,y) that makes one vertex the parent of the other.</li>
               <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their<br> inclusion does not result in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v).<br> Then, we perform their union and include them in the MST...</li>
+              <li>The Time complexity is O(E x log V) as selecting edges from the heap takes O(E x log E) time whereas, total time for Union-Find operation takes O(E x log V) time.</li>
           </ul>
       </li><br> 
     </ol>
