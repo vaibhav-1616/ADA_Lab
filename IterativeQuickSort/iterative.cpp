@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stack>
 #include <vector>
-// #include<algorithm>
 #include <chrono>  // For timing
 #include<fstream>
 
@@ -22,18 +21,6 @@ int partition(vector<int> &arr, int low, int high){
     return i+1;
 
 }
-
-// int quicksort(int arr[], int low, int high){            // recursive sorting
-//     if(low>=high){
-//         return 0;
-//     }
-//     else{
-//         int p = partition(arr, low, high);
-//         quicksort(arr, low, p-1);
-//         quicksort(arr, p+1, high);
-//     }
-// }
-
 
 void Iterativequicksort(vector<int> &arr, int low, int high){
     stack<int> s;
@@ -60,17 +47,6 @@ void Iterativequicksort(vector<int> &arr, int low, int high){
 
 
 int main() {
-
-    // vector<int> arr = {19,14,15,1,2,33,5,66,9,77,4,55};
-    // int n = arr.size();
-
-    // int low = 0;
-    // int high = n-1;
-    // Iterativequicksort(arr, low, high);
-
-    // for(int i=0; i<n; i++){
-    //     cout<<arr[i]<<" ";
-    // }
 
     ofstream file("iterative.csv");
     file << "size,time\n";

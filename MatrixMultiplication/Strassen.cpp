@@ -27,12 +27,35 @@ void strassen(vector<vector<int>>& A, vector<vector<int>>& B, vector<vector<int>
     } else {
         int mid = size / 2;
 
-        vector<vector<int>> A11(mid, vector<int>(mid, 0)), A12(mid, vector<int>(mid, 0)), A21(mid, vector<int>(mid, 0)), A22(mid, vector<int>(mid, 0));
-        vector<vector<int>> B11(mid, vector<int>(mid, 0)), B12(mid, vector<int>(mid, 0)), B21(mid, vector<int>(mid, 0)), B22(mid, vector<int>(mid, 0));
-        vector<vector<int>> C11(mid, vector<int>(mid, 0)), C12(mid, vector<int>(mid, 0)), C21(mid, vector<int>(mid, 0)), C22(mid, vector<int>(mid, 0));
-        vector<vector<int>> M1(mid, vector<int>(mid, 0)), M2(mid, vector<int>(mid, 0)), M3(mid, vector<int>(mid, 0)), M4(mid, vector<int>(mid, 0));
-        vector<vector<int>> M5(mid, vector<int>(mid, 0)), M6(mid, vector<int>(mid, 0)), M7(mid, vector<int>(mid, 0));
-        vector<vector<int>> AResult(mid, vector<int>(mid, 0)), BResult(mid, vector<int>(mid, 0));
+        vector<vector<int>> A11(mid, vector<int>(mid, 0)), 
+                            A12(mid, vector<int>(mid, 0)), 
+                            A21(mid, vector<int>(mid, 0)), 
+                            A22(mid, vector<int>(mid, 0));
+
+
+        vector<vector<int>> B11(mid, vector<int>(mid, 0)), 
+                            B12(mid, vector<int>(mid, 0)), 
+                            B21(mid, vector<int>(mid, 0)), 
+                            B22(mid, vector<int>(mid, 0));
+
+
+        vector<vector<int>> C11(mid, vector<int>(mid, 0)), 
+                            C12(mid, vector<int>(mid, 0)), 
+                            C21(mid, vector<int>(mid, 0)), 
+                            C22(mid, vector<int>(mid, 0));
+
+
+        vector<vector<int>> M1(mid, vector<int>(mid, 0)), 
+                            M2(mid, vector<int>(mid, 0)), 
+                            M3(mid, vector<int>(mid, 0)), 
+                            M4(mid, vector<int>(mid, 0));
+
+        vector<vector<int>> M5(mid, vector<int>(mid, 0)), 
+                            M6(mid, vector<int>(mid, 0)), 
+                            M7(mid, vector<int>(mid, 0));
+
+        vector<vector<int>> AResult(mid, vector<int>(mid, 0)),
+                            BResult(mid, vector<int>(mid, 0));
 
         // Dividing the matrices into sub-matrices
         for (int i = 0; i < mid; i++) {

@@ -48,13 +48,38 @@ float cosineSimilarity(map<string, int> &freq1, map<string, int> &freq2) {
 
 // Main function
 int main() {
-    string file1 = "file1.txt";
-    string file2 = "file2.txt";
+    string file_1 = "file1.txt";
+    string file_2 = "file2.txt";
 
-    map<string, int> freq1 = getWordFrequencies(file1);
-    map<string, int> freq2 = getWordFrequencies(file2);
+    map<string, int> freq1 = getWordFrequencies(file_1);
+    map<string, int> freq2 = getWordFrequencies(file_2);
 
     float similarity = cosineSimilarity(freq1, freq2);
+
+    string file1 = "file1.txt"; // Change to your actual file name
+    string file2 = "file2.txt"; // Change to your actual file name
+
+    ifstream f1(file1), f2(file2); // Open both files
+
+    if (!f1 || !f2) { // Check if any file failed to open
+        cerr << "Error: Could not open one or both files!" << endl;
+        return 1;
+    }
+
+    string line;
+    
+    cout << "Contents of " << file1 << ":\n";
+    while (getline(f1, line)) {
+        cout << line << endl;
+    }
+
+    cout << "\nContents of " << file2 << ":\n";
+    while (getline(f2, line)) {
+        cout << line << endl;
+    }
+
+    f1.close();
+    f2.close();
 
     cout << "Cosine Similarity: " << similarity << endl;
     return 0;
