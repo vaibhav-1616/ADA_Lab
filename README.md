@@ -146,4 +146,20 @@
                 Between 0 and 1 → Some level of similarity.</li> 
           </ul>
       </li><br> 
+        <li>
+          <b>Kruskal's Algorithm</b> <br>
+          <ul>
+              <li>A greedy algorithm that is used to calculate the minimum cost spanning tree for a given graph.</li>
+              <li>A spanning tree is a subgraph of a connected, undirected graph that: <br>
+                  <ol>
+                      <li>Includes all the vertices (nodes) of the original graph.</li>
+                      <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
+                      <li>Has exactly n-1 edges, where n is the number of vertices.</li>
+                  </ol>
+              <li>Initially, we are given a set of edges that we atore in a min-heap to sort them in increasing order with the minimum weight edge at the top.</li>
+              <li>We devise 2 functions: Find(x) that returns the root of the tree to whcih a vertex x belongs to and, <br>
+              Union(x,y) that makes one vertex the parent of the other.</li>
+              <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their inclusion does not result<br> in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v). Then, we perform their union and include them in the MST...</li>
+          </ul>
+      </li><br> 
     </ol>
