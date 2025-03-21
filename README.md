@@ -99,6 +99,16 @@
                       <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
                       <li>Has exactly n-1 edges, where n is the number of vertices.</li>
                   </ol>
+                  <li>First of all, we select a minimum weight edge to start building the MST. Then, we select the vertices (i,j)<br> such that i is in MST and j is not in MST.</li>
+          </ul>
+      </li><br> 
+        <li>
+          <b>Dijkstra's Algorithm</b> <br>
+          <ul>
+              <li>A greedy algorithm that is used to calculate the shortest path / minimum cost path from a (source) vertex<br> to all the other vertices of the graph.</li>
+              <li>This is also known as Single source shortest path algorithm as it calculates shortest path from one source<br> to all the other vertices.</li>
+              <li>First we intialize the shortest path equal to the values given in the adjacency matrix and then; later we see<br> if we are able to come up with a shorter path by going from source to that                     particular vertex via some vertices<br> that are already in SptSet(already shortest path calculate ho chuka hai)...</li>
+              <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
           </ul>
       </li><br> 
     </ol>
