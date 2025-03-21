@@ -113,4 +113,13 @@
               <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
           </ul>
       </li><br> 
+        <li>
+          <b>Multi-Stage Graphs</b> <br>
+          <ul>
+              <li>An important concept in Dynamic Programming</li>
+              <li>A directed, weighted graph in which the vertices are divided into different disjoint sets (stages) such that an <br>edge exists between Sx to Sx+1 and no edge between vertices of same stage.                  </li>
+              <li>Stages -> S1, S2 ... Sk such that a stage S<sub>i</sub> exists where 1<= i <= k and <br>number of vertices in S1(source) = number of vertices in Sk(sink)</li>
+              <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+          </ul>
+      </li><br> 
     </ol>
