@@ -49,7 +49,7 @@
           <ul>
               <li>(Odd Size)Sum of all rows, columns and diagonals is equal... Creates a square matrix where the sum of all <br>columns, rows and diagonals is equal.</li>
               <li>Follows a set pattern in where the numbers increase in a diagonal upwards to the left and goes down <br>one when number is a multiple of the size...</li>
-              <li>Time complexity of O(n<sup>2<sup>) for finding magic square.</li>
+              <li>Time complexity of O(n<sup>2</sup>) for finding magic square.</li>
           </ul>
       </li><br>  
         <li>
@@ -97,7 +97,7 @@
                   <li>We find the leftmost and rightmost points (points with max and min x-coordinate) so as to divide the set of points<br> into 2 portions.</li>
                   <li>We calculate the perpendicular distance of a point from a line which will help us in finding the max area triangle.</li>  
                   <li>We determine if a point is on the left side of a line coz only then will it be included in the HULL...</li>
-                  <li>The Worst case Time complexity for this problem is O(n<sup>2<sup>) whereas average case complexity is O(n log n).</li>                  
+                  <li>The Worst case Time complexity for this problem is O(n<sup>2</sup>) whereas average case complexity is O(n log n).</li>                  
               </ol>
               <img src="./Graphs/hull.png" width="700px"/> <br>
           </ul>
