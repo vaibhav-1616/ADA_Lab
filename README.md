@@ -99,7 +99,8 @@
                       <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
                       <li>Has exactly n-1 edges, where n is the number of vertices.</li>
                   </ol>
-                  <li>First of all, we select a minimum weight edge to start building the MST. Then, we select the vertices (i,j)<br> such that i is in MST and j is not in MST.</li>
+              <li>First of all, we select a minimum weight edge to start building the MST. Then, we select the vertices (i,j)<br> such that i is in MST and j is not in MST.</li>
+              <li>Then; we also initialize a near variable that keeps track of the vertices(in MST) nearest to current vertex. <br>We continue adding the edges using this near variable.</li>
           </ul>
       </li><br> 
         <li>
