@@ -116,7 +116,7 @@ int main(){
     // int low = 0;
     // int high = n-1;
 
-    // peak(arr, n);
+    // // peak(arr, n);
 
     // op_peak(arr, low, high);
 
