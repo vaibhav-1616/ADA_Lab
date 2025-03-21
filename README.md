@@ -123,4 +123,14 @@
                 <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
           </ul>
       </li><br> 
+          <li>
+          <b>All Pair Shortest Paths</b> <br>
+          <ul>
+              <li>An important concept in Dynamic Programming in which we are to find shortest path from each vertex to all<br> the other vertices.</li>
+              <li>Floyd-Warshall algorithm: Solution to this problem that involves storing the shortest paths of previous vertices<br> in the form of a nxn matrix.</li> 
+              <li> Then; to calculate the shortest path from the current vertex, we use those previously calculated results.</li>
+              <li>Firstly; we consider direct paths/edges from vertex i to j and then try to find a shorter path from i to any intermediate vertex k and from k to j...</li>
+                <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
+          </ul>
+      </li><br> 
     </ol>
