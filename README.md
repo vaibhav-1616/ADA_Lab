@@ -99,6 +99,61 @@
                       <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
                       <li>Has exactly n-1 edges, where n is the number of vertices.</li>
                   </ol>
+              <li>First of all, we select a minimum weight edge to start building the MST. Then, we select the vertices (i,j)<br> such that i is in MST and j is not in MST.</li>
+              <li>Then; we also initialize a near variable that keeps track of the vertices(in MST) nearest to current vertex. <br>We continue adding the edges using this near variable.</li>
+              <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+          </ul>
+      </li><br> 
+        <li>
+          <b>Dijkstra's Algorithm</b> <br>
+          <ul>
+              <li>A greedy algorithm that is used to calculate the shortest path / minimum cost path from a (source) vertex<br> to all the other vertices of the graph.</li>
+              <li>This is also known as Single source shortest path algorithm as it calculates shortest path from one source<br> to all the other vertices.</li>
+              <li>First we intialize the shortest path equal to the values given in the adjacency matrix and then; later we see<br> if we are able to come up with a shorter path by going from source to that                     particular vertex via some vertices<br> that are already in SptSet(already shortest path calculate ho chuka hai)...</li>
+              <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+          </ul>
+      </li><br> 
+        <li>
+          <b>Multi-Stage Graphs</b> <br>
+          <ul>
+              <li>An important concept in Dynamic Programming</li>
+              <li>A directed, weighted graph in which the vertices are divided into different disjoint sets (stages) such that an <br>edge exists between Sx to Sx+1 and no edge between vertices of same stage.                  </li>
+              <li>Stages -> S1, S2 ... Sk such that a stage S<sub>i</sub> exists where 1<= i <= k and <br>number of vertices in S1(source) = number of vertices in Sk(sink)</li>
+              <li>In this problem; we aim to find the shortest path a source to a sink using the above stated property of MSGs...</li>
+                <li>Time complexity of this algo -> O(n<sup>2</sup>)</li>
+          </ul>
+      </li><br> 
+          <li>
+          <b>All Pair Shortest Paths</b> <br>
+          <ul>
+              <li>An important concept in Dynamic Programming in which we are to find shortest path from each vertex to all<br> the other vertices.</li>
+              <li>Floyd-Warshall algorithm: Solution to this problem that involves storing the shortest paths of previous vertices<br> in the form of a nxn matrix.</li> 
+              <li> Then; to calculate the shortest path from the current vertex, we use those previously calculated results.</li>
+              <li>Firstly; we consider direct paths/edges from vertex i to j and then try to find a shorter path from i to any intermediate vertex k and from k to j...</li>
+              <li>If we get a shorter path, then we update the matrix and the shortest path between 2 vertices; else continue.</li>
+                <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
+          </ul>
+      </li><br> 
+           <li>
+          <b>Cosine Similarity</b> <br>
+          <ul>
+              <li>Cosine Similarity is a measure of similarity between two vectors based on the cosine of the angle between them. <br>
+               It is widely used in text analysis to compare the similarity of two documents.
+              </li>
+              <li>We use the concept of dot product to calculate the cosine of the angle between 2 text files. <br>The result ranges from 0 to 1:<br>
+                1 → Documents are identical.<br>
+                0 → Documents are completely different.<br>
+                Between 0 and 1 → Some level of similarity.</li> 
+          </ul>
+      </li><br> 
+        <li>
+          <b>Kruskal's Algorithm</b> <br>
+          <ul>
+              <li>A greedy algorithm that is used to calculate the minimum cost spanning tree for a given graph.</li>
+              <li>Initially, we are given a set of edges that we atore in a min-heap to sort them in increasing order<br> with the minimum weight edge at the top.</li>
+              <li>We devise 2 functions: Find(x) that returns the root of the tree to whcih a vertex x belongs to and, <br>
+              Union(x,y) that makes one vertex the parent of the other.</li>
+              <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their<br> inclusion does not result in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v).<br> Then, we perform their union and include them in the MST...</li>
           </ul>
       </li><br> 
     </ol>
