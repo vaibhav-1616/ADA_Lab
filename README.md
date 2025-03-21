@@ -10,6 +10,7 @@
               <li>In each iteration of this algorithm, we find the smallest portion in the unsorted portion of array.</li>
               <li>Swap this smallest element with the first element of the unsorted portion.</li>
               <li>Then, we shift the boundary of loop iteration one step forward (2 to n-1)...</li>
+              <li>Time complexity is O(n<sup>2</sup>) for best and worst case scenarios.</li>
               <img src="./Graphs/selectionSort.png" width="700px"/> <br>
           </ul>
       </li><br>
