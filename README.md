@@ -3,9 +3,19 @@
     <h3>List of all my ADA programs:</h3>
 <!-- <hr> -->
     <ol>
+    <li><b>Selection Sort Algorithm:</b> <br>
+          <ul>
+              <li>Selection Sort is a simple sorting algorithm that repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it with the first unsorted element.
+              </li>
+              <li>In each iteration of this algorithm, we find the smallest portion in the unsorted portion of array.</li>
+              <li>Swap this smallest element with the first element of the unsorted portion.</li>
+              <li>Then, we shift the boundary of loop iteration one step forward (2 to n-1)...</li>
+              <img src="./Graphs/selectionSort.png" width="700px"/> <br>
+          </ul>
+      </li><br>
       <li><b>QuickSort Algorithm:</b> <br>
           <ul>
-              <li>This is an efficient sorting algorithm that wroks well for larger input values.
+              <li>This is an efficient sorting algorithm that works well for larger input values.
               </li>
               <li>In this algorithm, we select a pivot element and then partition the entire array<br> 
                   around that pivot to ensure that elements greater than the pivot are to the right<br> of it and smaller elements are to the left of it. </li><br>
@@ -46,6 +56,10 @@
               <li>Problem involving the calculation of maximum profit that can be derived from a given set of values</li>
               <li>We sort the array according to the criterion we need(here we sort 3 time, according to profit, weight and <br>ratio of profit/weight) and then pick the items in non-increasing manner</li>
               <li>In this problem, we can include fractional parts of an item as well incase an item cannot be included<br> completely in the knapsack...</li>
+<<<<<<< HEAD
+=======
+              <li>Suppose, we have the max capacity of knapsack M and profits (P<sub>i</sub>) and weights (W<sub>i</sub>)... Then, we aim to maximize the (P<sub>i</sub>X<sub>i</sub>) subject to the constraint that (W<sub>i</sub>X<sub>i</sub>); where X is a flag array that tells the amount of item included...</li>
+>>>>>>> 8930de4 (change)
               <br>
                   <img src="./Graphs/knapsack.png" width="700px"/> <br>
           </ul>
