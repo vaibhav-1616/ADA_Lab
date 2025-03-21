@@ -134,4 +134,20 @@
                 <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
           </ul>
       </li><br> 
+           <li>
+          <b>Cosine Similarity</b> <br>
+          <ul>
+              <li>Cosine Similarity is a measure of similarity between two vectors based on the cosine of the angle between them. <br>
+               It is widely used in text analysis to compare the similarity of two documents.
+              </li>
+              <li>We use the concept of dot product to calculate the cosine of the angle between 2 text files. <br>The result ranges from 0 to 1:<br>
+                1 → Documents are identical.<br>
+                0 → Documents are completely different.<br>
+                Between 0 and 1 → Some level of similarity.</li> 
+              <li> Then; to calculate the shortest path from the current vertex, we use those previously calculated results.</li>
+              <li>Firstly; we consider direct paths/edges from vertex i to j and then try to find a shorter path from i to any intermediate vertex k and from k to j...</li>
+              <li>If we get a shorter path, then we update the matrix and the shortest path between 2 vertices; else continue.</li>
+                <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
+          </ul>
+      </li><br> 
     </ol>
