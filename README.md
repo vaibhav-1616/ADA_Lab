@@ -156,10 +156,10 @@
                       <li>Is a tree itself, meaning it's connected and has no cycles (loops).</li>
                       <li>Has exactly n-1 edges, where n is the number of vertices.</li>
                   </ol>
-              <li>Initially, we are given a set of edges that we atore in a min-heap to sort them in increasing order with the minimum weight edge at the top.</li>
+              <li>Initially, we are given a set of edges that we atore in a min-heap to sort them in increasing order<br> with the minimum weight edge at the top.</li>
               <li>We devise 2 functions: Find(x) that returns the root of the tree to whcih a vertex x belongs to and, <br>
               Union(x,y) that makes one vertex the parent of the other.</li>
-              <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their inclusion does not result<br> in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v). Then, we perform their union and include them in the MST...</li>
+              <li>We include the edges(not yet visited) in the MST one by one acc. to their edge weights only if their<br> inclusion does not result in formation of a cycle i.e for an edge u,v; Find(u) must not be equal to Find(v).<br> Then, we perform their union and include them in the MST...</li>
           </ul>
       </li><br> 
     </ol>
