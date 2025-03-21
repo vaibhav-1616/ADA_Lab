@@ -144,10 +144,6 @@
                 1 → Documents are identical.<br>
                 0 → Documents are completely different.<br>
                 Between 0 and 1 → Some level of similarity.</li> 
-              <li> Then; to calculate the shortest path from the current vertex, we use those previously calculated results.</li>
-              <li>Firstly; we consider direct paths/edges from vertex i to j and then try to find a shorter path from i to any intermediate vertex k and from k to j...</li>
-              <li>If we get a shorter path, then we update the matrix and the shortest path between 2 vertices; else continue.</li>
-                <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
           </ul>
       </li><br> 
     </ol>
