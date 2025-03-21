@@ -28,7 +28,7 @@ void AllPairShortest(vector<vector<int>> &graph, vector<vector<int>> &A, int n) 
 
 
 void printSolution(const vector<vector<int>> &A, int n) {
-    cout << "All-Pairs Shortest Path Matrix:\n";
+    cout << "All Pairs Shortest Path Matrix:\n";
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (A[i][j] == INF)

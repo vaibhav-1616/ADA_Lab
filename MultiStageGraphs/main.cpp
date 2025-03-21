@@ -24,7 +24,7 @@ int count_stages(vector<vector<int>>& graph) {
     }
 
     for(int i=0; i<size; i++){
-        cout<<"Stage of vertex "<<i<<" is -> "<<stage[i]<<endl;
+        cout<<"Stage of vertex "<<i<<" is -: "<<stage[i]<<endl;
     }
 
     return max_stages + 1; // for the final vertex (sink)
