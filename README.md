@@ -69,7 +69,7 @@
                   <li>Conventional Method: <br>We use 3 for loops to calculate the elements of the resultant matrix which gives us a 
                       time complexity of O(n<sup>3</sup>)...</li>
                   <li>Divide And Conquer: <br> We divide the larger matrices into smaller matrices by halving them effectively from 
-                      the order of n to n/2 each. <br>
+                      the order of n to n/2 each.
                   Still, using recursion we get Time complexity of O(n<sup>3</sup>).</li>
                   <li>Strassen: <br> Now, we modify our DnC code to replace 8 matrix multiplications to 7 while increasing the number of matrix <br>additions and sutractions... This gives us Time complexity = O(n<sup>2.81</sup>).
                   </li>
