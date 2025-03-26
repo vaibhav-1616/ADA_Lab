@@ -8,7 +8,7 @@
               <li>This is an efficient sorting algorithm that wroks well for larger input values.
               </li>
               <li>In this algorithm, we select a pivot element and then partition the entire array<br> 
-                  around that pivot to ensure that elements greater than the pivot are to the right of it and smaller elements are to the left of it. </li><br>
+                  around that pivot to ensure that elements greater than the pivot are to the right<br> of it and smaller elements are to the left of it. </li><br>
                   <img src="./Graphs/quicksort.png" width="700px"/> <br>
               <li>
                   Inherently, a recursion stack is used to perform sorting of the elements according to the pivot element. <br>
@@ -45,10 +45,9 @@
           <ul>
               <li>Problem involving the calculation of maximum profit that can be derived from a given set of values</li>
               <li>We sort the array according to the criterion we need(here we sort 3 time, according to profit, weight and <br>ratio of profit/weight) and then pick the items in non-increasing manner</li>
-              <li>In this problem, we can include fractional parts of an item as well incase an item cannot be included<br> completely in the knapsack...
+              <li>In this problem, we can include fractional parts of an item as well incase an item cannot be included<br> completely in the knapsack...</li>
               <br>
                   <img src="./Graphs/knapsack.png" width="700px"/> <br>
-              </li>
           </ul>
       </li><br> 
         <li>
@@ -57,9 +56,9 @@
               <li>We want to ensure that maximum number of jobs(or activities) are scheduled/completed within a given period of time...</li>
               <li>The goal is to maximize the number of jobs(or CPU usage) by ensuring highest amount of jobs that<br> can be completed without any overlap.</li>
               <li>In this problem, sort the activities by their start time and then by their finish times to calculate which <br>method leads to max number of activities that get completed without any overlap.
+              </li>
               <br>
                   <img src="./Graphs/activity_selection.png" width="700px"/> <br>
-              </li>
           </ul>
       </li><br> 
         <li>
