@@ -8,7 +8,7 @@
               <li>This is an efficient sorting algorithm that wroks well for larger input values.
               </li>
               <li>In this algorithm, we select a pivot element and then partition the entire array<br> 
-                  around that pivot <br> to ensure that elements greater than the pivot are to the right of it and smaller elements are to the left of it. </li><br>
+                  around that pivot to ensure that elements greater than the pivot are to the right of it and smaller elements are to the left of it. </li><br>
                   <img src="./Graphs/quicksort.png" width="700px"/> <br>
               <li>
                   Inherently, a recursion stack is used to perform sorting of the elements according to the pivot element. <br>
