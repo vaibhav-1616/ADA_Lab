@@ -170,4 +170,15 @@
               <li>The Time complexity is O(E x log V) as selecting edges from the heap takes O(E x log E) time whereas, total time for Union-Find operation takes O(E x log V) time.</li>
           </ul>
       </li><br> 
+      <li>
+          <b>Matrix Chain Multiplication:</b> <br>
+          <ul>
+              <li>An important problem in dynamic programming that focuses on optimizing the number of actual scalar<br> 
+              multiplications required to successfully multiply a given set of matrices.</li>
+              <li>In this, we are given an array with n elements (dimensions of matrices) which basically form n-1 matrices.</li>
+              <li>We then use recursive formula to determine the minimum number of multiplications required to <br>
+              multiply all the matrices along with the order in which the parantheses should be placed so that,<br> we can optimize this task.</li>
+              <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
+          </ul>
+      </li><br>
     </ol>
