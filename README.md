@@ -185,4 +185,12 @@
               <li>Time complexity of this algo -> O(n<sup>3</sup>)</li>
           </ul>
       </li><br>
+      <li>
+          <b>0/1 Knapsack:</b> <br>
+          <ul>
+              <li>An important problem in dynamic programming that is similar to fractional Knpasack problem discussed using the Greedy Approach.</li>
+              <li>In this, we either fully include an item in the knapsack (marking 1 for it in the inclusion/flag array) or completely exclude it (marking 0 for it in the flag array).</li>
+              <li>We use the Merge-Purge method here to devise a solution to this problem. Merge function adds new state i.e. a new {weight, value} pair to the existing set whenever a new item {wi, vi} is considered. After merging new weight-value pairs, some states might be dominated by others. The Purge function removes these dominated states to keep only the most optimal ones.</li>
+          </ul>
+      </li><br>
     </ol>
