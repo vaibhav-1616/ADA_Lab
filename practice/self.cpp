@@ -306,7 +306,7 @@ void iterative(vector<int> &arr, int low, int high){
             s.push(low);            // left sub-array
             s.push(p-1);
 
-            s.push(p+1);        // right sub-array
+            s.push(p+1);            // right sub-array
             s.push(high);
 
         }
@@ -321,6 +321,59 @@ void iterative(vector<int> &arr, int low, int high){
     
 //         }
 //     }
+
+
+
+struct item{
+    int weight;
+    int profit;
+};
+
+bool sort_by_pw_ratio(item &a, item &b){
+    return (double) a.profit / a.weight > (double) b.profit / b.weight;
+}
+
+void knapsack(vector<item> &items, int max_cap){
+
+    sort(items.begin(), items.end(), sort_by_pw_ratio);
+
+    vector<double> flag(items.size(), 0.0);
+
+    float total_profit = 0.0;
+    int curr_weight = 0;
+
+    for(int i=0; i<items.size(); i++){
+        if(curr_weight + items[i].weight <= max_cap){
+            total_profit += items[i].profit;
+            curr_weight += items[i].weight;
+            flag[i] = 1.0;
+        }
+
+        else{
+            double fraction = (double)(max_cap - curr_weight) / items[i].weight;
+            total_profit += items[i].profit * fraction;
+            flag[i] = fraction;
+            break;      // coz now knapsack is full :D
+
+        }
+    }
+
+    for(int i=0; i<items.size(); i++){
+        cout<<items[i].weight<<" "<<items[i].profit<<endl;
+    }
+
+    cout<<"Flag array: ";
+
+    for(int i=0; i<items.size(); i++){
+        cout<<flag[i]<<" ";
+    }
+    cout<<endl;
+
+    cout<<"Total profit = "<<total_profit<<endl;
+
+
+}
+
 
 int main()
 {
@@ -357,9 +410,20 @@ int main()
 
     // quick(arr, 0, arr.size() - 1);
 
-    iterative(arr, 0, arr.size() - 1);
+    // iterative(arr, 0, arr.size() - 1);
 
-    print(arr);
+    // print(arr);
+
+
+    vector<item> items = {
+        {10, 100},
+        {20, 120},
+        {30, 140},
+        {40, 150},
+        {50, 200}
+    };
+
+    knapsack(items, 100);
 
     return 0;
 }

@@ -201,4 +201,13 @@
               <li>It is solved using Dynamic Programming in O(m × n) time, where m and n are the lengths of the two input sequences.</li>
           </ul>
       </li><br>
+      <li>
+          <b>Sum of subsets problem:</b> <br>
+          <ul>
+              <li>The subset sum problem asks whether there exists a subset of a given set of numbers that adds up to a target sum. It can be solved using techniques, like backtracking.</li>
+              <li>Given an array of non-negative integers arr and a target sum target_sum, determine if there's a subset of arr whose elements sum up to target_sum.</li>
+              <li>Backtracking approach: This involves exploring all possible subsets by either including or excluding each element. A bounding function can be used to prune the search space by checking if a path can lead to a solution. </li>
+              <li>The time complexity of solving the sum of subsets problem using backtracking is O(2^n), where 'n' is the number of elements in the set.</li>
+          </ul>
+      </li><br>
     </ol>
